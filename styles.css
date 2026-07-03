@@ -508,25 +508,8 @@ svg { display: block; }
   box-shadow: var(--shadow-soft);
   flex: 1;
 }
-.timeline-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 6px;
-}
-.timeline-head h3 { margin: 0; font-size: 18px; }
+.timeline-content h3 { margin: 0 0 6px; font-size: 18px; }
 .timeline-content p { margin: 0; color: var(--text-soft); font-size: 15px; }
-.badge {
-  background: rgba(239,91,0,.12);
-  color: var(--orange);
-  font-size: 12px;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: var(--radius-pill);
-  white-space: nowrap;
-}
 
 /* ---------- Información práctica / precio ---------- */
 .ticket-card {
@@ -567,6 +550,12 @@ svg { display: block; }
   background: repeating-linear-gradient(to right, var(--beige) 0 8px, transparent 8px 16px);
   margin: 24px 0;
 }
+.reserve-note {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-soft);
+  margin-bottom: 20px;
+}
 
 @media (min-width: 640px) {
   .ticket-list { grid-template-columns: 1fr 1fr; }
@@ -580,24 +569,25 @@ svg { display: block; }
   align-items: center;
 }
 .about-photo { flex-shrink: 0; }
-.about-photo-placeholder {
-  width: 180px; height: 180px;
+
+/* Contenedor de la foto de Valen. Forma orgánica + object-fit: cover
+   para que cualquier foto (vertical, horizontal o cuadrada) se recorte
+   bien. Si assets/valen-online.jpg no carga, queda visible este fondo
+   degradado como respaldo (ver "onerror" en index.html). */
+.profile-image-wrapper {
+  width: 180px;
+  height: 180px;
+  max-width: 100%;
   border-radius: 45% 55% 60% 40% / 50% 45% 55% 50%;
+  overflow: hidden;
   background: linear-gradient(145deg, var(--orange), var(--peach));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--white);
-  font-family: var(--font-title);
-  font-size: 64px;
-  font-weight: 600;
   box-shadow: var(--shadow-card);
 }
-.about-photo img {
-  width: 180px; height: 180px;
+.profile-image-wrapper img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 45% 55% 60% 40% / 50% 45% 55% 50%;
-  box-shadow: var(--shadow-card);
+  display: block;
 }
 .about-text { text-align: center; }
 .about-text p { color: var(--text-soft); }

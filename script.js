@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const WHATSAPP_NUMBER = '573104704939';
 
   // Mensaje precargado para el CTA principal ("Quiero mi cupo")
-  const MENSAJE_RESERVAR = 'Hola Valen, quiero reservar mi cupo para el taller online Desbloquea tus ideas del miércoles 29 de julio a las 7:00 p.m. ¿Me envías la información de pago?';
+  const MENSAJE_RESERVAR = 'Hola Valen, quiero pagar mi cupo para el taller online Desbloquea tus ideas del miércoles 29 de julio a las 7:00 p.m. ¿Me envías el link o los datos de pago?';
 
-  // Mensaje precargado para el CTA secundario ("Quiero más información")
-  const MENSAJE_INFO = 'Hola Valen, quiero más información sobre el taller online Desbloquea tus ideas del miércoles 29 de julio a las 7:00 p.m.';
+  // Mensaje precargado para el CTA secundario ("Ver información de pago")
+  const MENSAJE_INFO = 'Hola Valen, quiero información sobre el pago del taller online Desbloquea tus ideas del miércoles 29 de julio a las 7:00 p.m.';
 
   const buildWhatsappLink = (message) =>
     `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
